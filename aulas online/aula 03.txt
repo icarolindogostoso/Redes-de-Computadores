@@ -1,0 +1,96 @@
+borda da rede -> onde ficam os sistemas finais (hospedeiros) - quem vai usar efetivamente
+o servico
+
+onde ficam os clientes e os servidores
+cliente -> no caso da web vai ser o navegador, ele que vai fazer a requisicao para um servidor
+para poder obter uma pagina ou um objeto que compoe um site
+clientes sao hospedeiros e fazem parte da borda da rede
+podem ser moveis
+
+servidores -> tambem fazem parte da borda da rede
+sao tipicamente estaticos em um data center
+a sua casa pode ser um servidor, mas nao da muito certo por poder acontecer diversas coisas
+que podem deixar o servidor indisponivel, tambem nao podendo escalar bem
+servidores geralmente ficam em um lugar apropriado para isso para que fiquem disponiveis a
+maior parte do tempo possivel
+
+redes de acesso, meios fisicos -> enlaces que permitem essa comunicacao, a comunicacao entre
+clientes e servidores é feita pelos enlaces (podendo ser por cabos ou sem fio)
+
+nucleo da rede -> roteadores interconectados que formam a rede de redes (nao aplicam nenhuma
+operacao que vai ser diretamente util, so vai direcionar)
+
+
+
+
+como conectar os sistemas finais a rede maior? como fazemos para acessar o roteador de borda,
+que é o que vai nos forcener acesso ao resto da rede?
+- redes de acesso residencial (rede domestica)
+- redes de acesso institucional (escolas, empresas)
+- redes de acesso movel (acessadas enquanto estamos em movimento)
+
+importante: largura de banda -> de repente quando voce ta usando um tipo de rede e passa
+pra outra, pode dar problema -> define quantos bits por segundos voce consegue enviar
+e receber (receber é maior do que enviar)
+
+importante: acesso compartilhado ou dedicado
+se voce tem um link de 400 MB para todos alunos e funcinarios, vai ficar pouca largura
+de banda para todo mundo
+se voce tem um link de 200 MB que é so pra mim e pra minha familia, vai acabar rendendo
+bem mais, fica muito mais rapido
+
+
+
+
+Acesso a rede: Modem discado
+tipo de conexao que usa a estrutura de telefone que ja existe
+se o usuario tem um telefone fixo cabeado que saia da central da operadora de telefone e ia
+ate a casa do cliente e se conectava ao aparelho telefonico
+esse cabo poderia ser usado para acessar a internet
+os equipamentos eram para passar voz, havendo uma filtracao de frequencias mais altas e
+modulava os dados para audio e convertia de volta para dados
+
+Acesso a rede: Digital Subscriber Line (DSL)
+provedores usaram as frequencias mais altas para transmitirem dados pelos fios de telefone
+era um cabo para cada cliente
+
+Acesso a rede: rede de TV a cabo
+canais que seriam pagos para serem assistidos com canais exclusivos e com menos propagandas
+esse mesmo cabo passou a ser usada para fornecer internet, sendo um cabo compartilhado
+a velocidade ia depender de quantas pessoas estariam usando a rede
+
+Acesso a rede: rádio
+tinha muito espaco que nao eram cobertos pelo cabo, sendo usado a rede via radio para
+atingir esse pessoal, chegando ate alguns km de distancia sem precisar exceder a potencia
+maxima
+tinha que ter a antena no topo de um lugar alto e uma antena na casa apontada pra antena
+
+Acesso a rede: FTTH (Fiber To The Home)
+levando fibra optica para as casas das pessoas
+- AON
+- PON
+
+Acesso a rede: rede residencial
+modem que é conectado a um roteador que é conectado com os aparelhos que ficam dentro da
+casa, tanto com fio ou sem fio
+
+Acesso a rede: rede institucional (Ethernet)
+
+Acesso a rede: sem fio
+
+
+
+
+Hospedeiros: enviam pacotes de dados
+para fazer isso eles pegam a mensagem da aplicacao (se voce quer acessar um detertminado
+web site, os eu computador vai montar uma mensagem e enviar para o servidor fazendo a
+requisicao dos objetos que ele quer, e o servidor vai mandar uma mensagem pela camada
+de aplicacao)
+
+nas camadas inferiores essa mensagem vao ser quebradas para serem enviadas, sendo divididas
+em varios pacotes que vao ter varios tamanhos e vao ser remontadas la no servidor
+
+esses pacotes vao ser transmitidos por uma determinada taxa de transmissao, ou seja, quanto
+maior a larguda de banda do enlace, maior a taxa de transmissao
+
+o tempo de transmissao vai depender do tamanho do pacote e da taxa de transmissao

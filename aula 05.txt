@@ -1,0 +1,97 @@
+Camada de Enlace
+
+diferenciação da camada fisica para a camada de enlace:
+- fisica - transmissao de bits, codificacao, multiplicacao (realmente passar bits)
+- enlace - delimitação da informacao (o que ela quer dizer), deteccao de erros de transmissao,
+controle de acesso ao meio fisico, endereçamento fisico
+
+funções da camada de enlace
+
+a) delimitação da informação:
+o nivel fisico vai transmitir uma sequencia de bits sem nenhuma semantica ou sintaxe associada
+
+10100101011101010010101111 <- isso pode significar qualquer coisa a depender do contexto
+
+o nivel de enlace irá estruturar a informação a ser transmitida em um conjunto de unidades 
+logicas chamadas frames, que terão sintaxe e semantica predefinidos
+
+1010010 1011101 010010 101111 <- cada um vai ser traduzido conforme o protocolo para que assim
+seja entendida a mensagem
+
+o inicio e fim de cada frame que passa pela rede pode entao ser determinado pelos equipamentos
+desta forma, todos os equipamentos da rede que inplementam a camada de enlace entendem os
+frames que passam por eles
+
+
+b) controle de acesso ao meio
+
+protocolos de enlace normalmente incluem um conjunto de regras que definem quando as estacoes
+podem transmitir no meio fisico
+
+- isto é, se em uma sala todo mundo tentar falar ao mesmo tempo nao vai ser possivel entender
+tendo que ter uma regra de um falar de cada vez para que todos se entendam
+
+- na camada de enlace, o "meio fisico" é como se fosse a sala onde as pessoas estao tentando
+falar, as "estacoes" sao as "pessoas" (computadores, roteadores, etc) e o controle de
+acesso ao meio sao as regras que determinam quem pode transmitir dados e quando
+
+a forma como se controla o acesso das estacoes ao meio fisico tem grande influencia na
+eficiencia da rede
+
+historicamente, o controle de acesso ao meio das redes ethernet baseiam-se em um conjunto
+de tecnicas chamadas CSMA
+- CSMA/CA (redes sem fio)
+- CSMA/CD (redes cabeadas)
+
+-> CSMA/CD (Carrier Sense Multiple Access with Collision Detection)
+quando uma estacao deseja transmitir, ela deve seguir os seguintes passos:
+
+1 - "ouve" o meio para saber se há alguma transmissao em progresso
+2 - se nao houver ninguem transmitindo ela pode transmitir
+3 - se ja houver uma transmissao ocorrendo, ela espera por um tempo aleatorio e volta pra 1
+
+- detecta colisoes durante transmissao (2 estacoes transmitindo ao mesmo tempo)
+- enquanto transmite a estacao continua "escutando"
+- quando o que a estacao "escuta" é diferente do que ela está transmitindo, está havendo
+uma colisao
+
+- detectada uma colisao as estacoes que estavam transmitindo
+1 - abortam a transmissao
+2 - esperam por um tempo, calculado por um algoritmo apropriado e tentam retransmissao
+
+tecnicamente o CSMA/CD é chamada de IEEE 802.3
+
+
+
+
+
+IEEE 802.3 -> endereços MAC
+
+é um identificador (endereço) unico, associado a cada interface (placa) de rede
+caracteristicas:
+- armazenado no hardware, mas pode ser alterado por software
+- tambem chamado de endereço fisico
+
+estrutura:
+- possui 48 bits, sendo representado por 6 bytes de 2 caracteres hexadecimais
+ex: 01:23:45:67:89:ab
+
+- os 3 primeiros bytes identificam o fabricante
+- os 3 seguintes sao utilizados por cada fabricante como desejar
+
+- existem faixas de endereços nao usados ou com funcoes especiais:
+ex: ff:ff:ff:ff:ff:ff -> usado para enviar um frame para todos os dispositivos da rede
+
+
+
+HUBs Ethernet
+- possibilitam a conexao de varios dispositivos
+- um sinal introduzido em uma porta será enviado para todas as outras
+- realizam a "repeticao" do sinal
+
+
+
+switches Ethernet
+- dispositivo que opera na camada de enlace
+- monta uma tabela com os enderecos MAC dos equipamentos ligados a cada uma de suas
+portas

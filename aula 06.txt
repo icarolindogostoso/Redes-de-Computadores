@@ -1,0 +1,97 @@
+Camada de Rede
+
+camada fisica:
+- transmissao de bits
+- codificacao
+- multiplexacao
+
+camada de enlace:
+- delimitacao da informacao
+- deteccao de erros de transmissao
+- controle de acesso ao meio fisico
+- enderecamento fisico
+
+CAMADA DE REDE:
+- enderecamento
+- "traducao" de enderecos de enlace
+- roteamento de dados ate o destino
+basicamente provê os meios para transmissao de dados entre entidades do nivel de transporte
+
+
+modelo internet TCP/IP
+- é um conjunto de regras que define como os dispositivos na internet se comunicam entre si
+- ele organiza a comunicacao em camadas, mas nao se preocupa muito com os detalhes de como
+os dados viajam fisicamente pelos fios ou como as redes locais estao configuradas
+
+- o modelo TCP/IP não especifica como os dados são fisicamente enviados (se por fios, wifi, etc)
+- em vez disso, ele deixa esses detalhes para outros modelos (como o OSI)
+
+- o modelo TCP/IP pode usar diferentes tecnologias de rede fisica e de enlace enquanto
+ainda segue as regras de comunicacao TCP/IP
+
+- o modelo é mais simples e flexivel -> nao se preocupa com como os dados sao fisicamente
+transmitidos, permitindo que diferentes tipos de rede e tecnologias possam ser usadas,
+ajudando a internet a crescer de maneira rapida e eficiente
+
+RESUMO: o modelo TCP/IP foca na comunicacao de dados entre dispositivos, sem se preocupar muito
+com os detalhes de como os dados sao fisicamente transmitidos, facilitando a adaptacao de
+varias tecnologias e promove o crescimento da internet
+
+obs1: a partir da camada de rede a implementacao é 100% em software
+
+obs2: no modelo TCP/IP é definido com clareza quais protocolos devem ser usados na camada de
+rede, transporte e aplicacao (O modelo TCP/IP deixa bem claro quais protocolos devem ser 
+usados para garantir que a comunicação entre dispositivos na internet aconteça de forma 
+eficiente)-> os protocolos sao abertos e publicos, ou seja, qualquer um pode usar ou 
+implementar esses protocolos sem custo
+
+
+
+sobre as funcoes da camada de rede:
+- enderecamento - atribuicao de enderecos logicos (enderecos IP) para cada uma das estacoes
+de rede
+
+ex: imagine que voce tem uma rede de computadores em casa, e cada computador precisa de um
+ENDERECO UNICO para poder se comunicar com os outros. esse endereco unico na rede é o
+ENDEREÇO IP
+
+- traducao de endereços - realizar o mapeamento entre todos os enderecos logicos (IP) em
+fisicos (MAC)
+
+ex: agora imagine que seu computador quer mandar uma mensagem para outro computador na mesma
+rede, mas para fazer isso ele precisa saber o ENDERECO FISICO do dispositivo de destino, o
+qual é chamado ENDERECO MAC
+
+- roteamento - encaminhamento das unidades de dados ate o seu destino, passando pelos
+sistemas intermediarios
+
+ex: agora imagine que voce está tentando acessar um site que está hospedado em outro país.
+seu computador precisa enviar dados para o servidor que está la -> a camada de rede encaminha
+os dados por ROTEADORES, que determinam o melhor caminho para qeu as informacoes cheguem ao
+destino, mesmo que o servidor esteja do outro lado do mundo
+
+
+
+protocolo IP
+- implementa as funcoes de ENDERECAMENTO e ROTEAMENTO
+- opera pela transferencia de bloco de dados denominados DATAGRAMAS (pacotes)
+- a origem e destino de cada datagrama sao identificados atraves de enderecos presentes
+no seu cabeçalho
+- CADA DATAGRAMA É TRATADO DE FORMA INDEPENDENTE pela rede, nao possuindo nenhuma relacao
+com qualquer outro
+
+caracteristicas:
+- nao confiavel -> nao garante que os pacotes de dados cheguem ao destino ou que eles cheguem
+na ordem correta. ele apernas se encarrega de enderecar e enviar os pacotes
+
+- nao orientado a conexao -> nao há uma preparacao ou "negociacao" antes do envio de dados.
+nao existe uma "conexao" formal entre o remetente e o receptor. cada pacote de dados enviado
+é independente e nao depende de pacotes anteriores ou posteriores
+
+- nao realiza controle de erro -> nao verifica se os dados chegaram corretamente ou se 
+foram corrompidos
+
+- nao realiza controle de fluxo -> nao verifica se o dispositivo de destino é capaz de receber
+os pacotes de dados na velocidade em que estao sendo enviados
+
+obs: essas funcoes sao deixadas para serem implementadas na camada de transporte

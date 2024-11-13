@@ -1,0 +1,57 @@
+Redes de Computadores
+
+computadores interligados: pode imaginar uma rede de pesca
+um computador pode estar conectado em várias direções
+
+computadores interconectados
+troca de informações
+
+internet - rede de redes
+a internet conecta todo o globo e em cada pontinho do globo tem mais redes menores
+
+caracteristicas das redes:
+- diferentes tamanhos
+- diferentes organizacoes/hierarquia -> quem manda informacao e quem recebe informacao
+- diferentes topologias -> organizacao fisica
+
+
+
+como os computadores consequem trocar informacoes?
+- PROTOCOLOS 
+ex: em uma reuniao do meet se todo mundo abrir o microfone ninguem vai entender nada
+é necessario uma REGRA de que todos se calem para um falar 
+
+ou seja, PROTOCOLOS sao conjuntos definidos de padroes/regras qeu os computadores devem
+seguir para poderem se comunicas adequadamente
+
+- MODELOS
+a) OSI - modelo teorico dividido em 7 camadas: fisica, enlace, rede, transporte, sessao
+apresentacao, aplicacao
+
+-> cada camada tem um protocolo que vai fazer com que as partes funcionas
+
+b) TCP/IP - 5 camadas: fisica, enlace, rede, transporte, aplicacao
+
+mas o que isso quer dizer?
+quando voce vai fazer uma compra online voce compra o produto
+o produto que voce ta pedindo vai ser empacotado
+depois vai ser colocado em um caminhao para poder chegar na porta da sua casa
+
+a comunicacao em redes de computadores funciona da mesma maneira:
+- voce vai pedir o pacote
+- o pacote vai de caminhao, vai passar por uma estrada, seguir uma rota, ate chegar 
+na sua casa, que voce pega
+- o caminhao -> camada FISICA
+- estrada, se tem buracos ou pedagios -> camada de ENLACE
+- caminho, caminho da loja ate sua casa (rota) -> camada de REDE
+- porta da sua casa, o pacote vai ser entregue, vao tocar a campainha, bater na porta?
+tudo isso define a camada de TRANSPORTE
+- o pacote em si -> camada de APLICACAO
+
+
+
+resumo: redes de computadores sao computadores que estao conectados entre si que 
+conseguem trocar informacoes. essa troca de informacoes acontece de uma maneira 
+especifica, regida por protocolos, que esses estao organizados em modelos, que tem
+camadas, podendo associar a uma compra pela internet e dessa forma pode se comunicar
+pelo mundo

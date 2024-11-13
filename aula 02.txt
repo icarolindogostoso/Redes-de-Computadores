@@ -1,0 +1,112 @@
+Classificação quanto a abrangencia
+
+definicao 1 "redes de computadores é um conjunto de modulos processadores capazes de 
+trocar informacoes e compartilhar recursos, interligados por um sistema de 
+comunicacao"
+
+definicao 2 "redes de computadores um conjunto de maquinas autonomas e interconectadas
+que trocam informacoes"
+
+- seja qual for o conceito estarao sempre presentes os dois elementos fundamentais:
+a) os computadores (modulos processadores) -> dispositivos capazes de enviar ou receber
+dados utilizando o SISTEMA DE COMUNICACAO
+
+b) um sistema de comunicacao (a rede em si) -> um arranjo topologico que interliga 
+varios equipamentos atraves de enlaces fisicos e de um conjunto de regras que que
+organizam a comunicacao (protocolos)
+
+
+
+- protocolos - conjunto de regras semanticas e sintaticas que devem ser seguidas para
+possibilitar a comunicacao de duas entidades (pessoas, computadores, etc)
+a) protocolos humanos -> regras de relacao entre as pessoas
+" que horas sao?"
+"onde voce trabalha?"
+"qual seu nome?"
+
+b) protocolos de rede
+maquinas ao inves de humanos -> toda a comunicacao na internet é governada por 
+protocolos, isto é, regras
+protocolos definem o formato e a ordem das mensagens enviadas e recebidas e ações a
+serem tomadas no envio e recepcao das mensagens entre os computadores
+
+uma maquina cliente pede uma conexao ao servidor
+o servidor abre a conexao
+o cliente pede uma pagina
+o servidor manda a pagina ao cliente, que ve a pagina em sua tela
+
+
+
+- internet
+milhoes de elementos interligados atraves de redes que sao interligadas por roteadores
+executando aplicacoes distribuidas, ou seja, independente -> prestam servicos umas as
+outras de forma distribuida, ou seja, nao existe nenhuma maquina gestora de toda a 
+internet
+forma distribuida -> formada por enlaces de comunicacao -> meios fisicos de transmissao
+que interligam as redes de computadores atraves de equipamentos chamados roteadores
+essas redes de comunicam enviando e recebendo pacotes de dados
+
+a) estruta da internet
+- equipamentos da borda da rede -> clientes e servidores rodando aplicacoes, clientes
+solicitando algum servico e os servidores fornecendo servicos aos clientes
+
+- nucleo da rede -> roteadores e quipamentos que permitem a conexao entre as varias
+redes atraves dos acessos (meios fisicos)
+
+- acesso, meio fisico -> enlaces e fibras
+
+
+- borda da rede
+a) hosts (sistemas finais) -> equipamentos que executam os aplicativos, localizados 
+na extremidade da rede, podendo ser cliente ou servidor
+
+b) modelo cliente/servidor -> o cliente é o equipamento que toma a iniciativa de pedir
+algum servico ao servidor, que disponibiliza esse servico usando toda a estruta das
+redes que compoem a internet
+
+c) modelo peer-to-peer (P2P) -> a maquina tanto é cliente quanto servidora, tem uma 
+simetria de comunicacao, tanto pode solicitar como pode fornecer
+
+
+- nucleo da rede -> basicamente formada por roteadores e redes de roteadores, 
+encontrando o melhor caminho para encaminhar pacotes de uma rede a outra na rede 
+mundial
+nesse equipamento nao rodam as aplicacoes web/eletronica, so rodando nos hosts clientes
+e servidores, sendo maquinas simples fazendo somente encaminhar os pacotes por 
+determinados caminhos em funcao do congestionamento na rede, tendo paramentros que
+atualizam tabelas que encaminham pacotes pelo melhor caminho a cada momento, ou seja,
+nem sempre o pacote vai ser encaminhada pelo mesmo caminho
+
+
+
+- classificacao das redes quanto a abrangencia
+
+a) redes pessoais (PANs)
+b) redes locais (LANs)
+c) redes metropolitanas (MANs)
+d) redes geograficamente distribuidas (WANs)
+
+
+- PANs
+abrangencia por volta de 10 metros
+com caracteristicas principais de serem sem fio, moveis e com restricoes de consumo
+de energia
+ex: bluetooth
+
+- LANs
+abrangencia de 100 metros a milhares de metros
+sao dispositivos com e sem fios, moveis ou nao, que podem trocar grandes volumes
+de dados
+estao em empresas e predios
+ex: Ethernert, wifi, dados moveis
+
+- MANs
+abrangencia de varios km
+prove interligacao de lans de empresas ou funcionar como rede de acesso para residencias
+ou empresas
+ex: xDSL -> cabos metalicos de telefones, HFC -> cabos de fibra optica
+
+- WANs
+abrangencia de milhares de km
+usado em operadoras de telefone e grandes provedores de internet
+ex: MPLS, HDLC, frame relay

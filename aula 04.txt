@@ -1,0 +1,70 @@
+MODOS DE TRANSMISSAO E TOPOLOGIAS DE REDES
+
+as linhas de comunicao (enlaces) que interligam os computadores de uma rede podem ser linhas
+que utilizam meios metalicos ou meio oticos (cabos metalicos ou fibras oticas)
+
+esses meios de comunicacao sao definidos como meios guiados -> os sinais eletricos sao 
+guiados pelos fios
+
+existem enlaces que sao por sistemas de radio, nao tendo fio (WIFI, BlueTooth)
+
+
+linhas de comunicacao
+- padrao de codificacao dos dados -> codificacao dos dados diz respeito a modificacao do 
+sinal digital para conseguir beneficios na transmissao (melhoria no sincronismo)
+- modulacao dos dados -> transforma o sinal analogico, conseguindo tornar o meio, ou seja,
+tornar a banda de transmissao mais larga
+- modo de transmissao -> como os dados sao transmitidos (simplex, halfduplex, fullduplex)
+- topologia de rede -> classificacao das redes (embarramento, rede estrela, em malha)
+
+
+
+modos de transmissao
+- modo simplex - informacao percorre o meio em um unico sentido, isto é, sai de um ponto
+e chega a outro ponto, SO UM SENTIDO (um dispositivo sera sempre o transmitor e o outro
+sempre sera o receptor) // esse modo quase nao é usado em redes de computadores, ja que 
+exige uma comunicacao nos dois sentidos
+
+- modo half duplex - a informacao percorre o meio fisico em ambos os sentidos, mas 
+alternadamente, nunca simultaneamente, apenas uma estacao pode obter a posse do meio por 
+vez // é o modo de transmissao das redes Ethernet
+
+- modo full duplex - a informacao é transmitida e recebida simultaneamente, isto é, ao mesmo
+tempo, trazendo como beneficio a melhor velocidade das interfaces // esse tipo é mais comum
+nas redes que tem o switch
+
+
+
+topologia de rede
+refere-se a forma com que os enlaces fisicos estao organizados, determinando os caminhos
+fisicos existentes e utilizaveis entre quaisquer pares de estacoes conectadas a essa rede
+ex: barramento, anel, estrela, mista
+
+as topologias de redes tambem podem ser operadas das formas
+- ponto a ponto - so tem 2 nós (uma maquina e outra maquina) interligadas pelos elementos
+de comunicacao que pode ser cabo metalico, otico ou de radio
+
+- multiponto - varios nós e equipamentos em cada enlace
+
+as topologias de rede tambem consideram o tipo de redes que vao atuar:
+- redes locais - baixo custo (rede do usuario), alta confiabilidade (nao tem meio de 
+degradacao)
+
+a topologia com mais atuacao é a topologia ESTRELA (elementos interligados por um elemento
+central (switch ou HUB))
+
+- redes ones (geograficamente distribuidas) - altissimo custo para alcansar longas distancias
+com uma confiabilidade menor (estao mais sugeitas a fatores de degradacao), mas tendo alta
+velocidade
+(tem que levar em consideracao o custo)
+
+a topologia mais usada é a MISTA, tendo o curso como fator importante assim como a 
+REDUNDANCIA -> nao podendo fazer uma rede que todos os elementos se interligam com todos os
+elementos pela questao do custo // nem muito menos uma rede sem nenhuma rota de seguranca,
+isto é, redundancia // a melhor seria uma rede mista na qual tenha um equilibrio entre
+o curso e a redundancia
+
+
+topolia logica x topologia fisica 
+topologia logica - forma de se definir a rede a nivel de configuracao // COMO A REDE FUNCIONA
+topologia fisica - disposicao FISICA dos elementos, como os cabos estao organizados

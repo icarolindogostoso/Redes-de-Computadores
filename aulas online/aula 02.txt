@@ -1,0 +1,91 @@
+o que é internet?
+
+visão basica -> composta por bilhoes de dispositivos de computacao que estao conectados
+dispositivos, hospedeiros ou sistemas finais - >sao eles que executam as aplicacoes de rede
+
+a) pc -> se voce abre um navegador pra acessar um site, voce está fazendo uso uma aplicacao
+de rede que ta usando a internet como a infraestrutura pra voce acessar aquilo que voce quer
+
+b) servidores -> sistemas finais = vao ser aqueles que vao estar senod usado para prestar
+algum tipo de servico
+
+c) laptop sem fio -> fazem acesso a internet ou outras redes atraves de ondas de radio
+
+d) smartphone -> tem internet tambem executando aplicacoes de rede
+
+
+para poder fazer a conexao desses dispositivos que estao na borda da rede:
+enlaces de comunicacao -> meio atraves do qual voce vai acessar uma rede
+
+ex: sibra optica, fios de cobre, ondas de radio, de wifi, sinais de satelite
+
+- importante: taxa de transmissao -> largura de banda é o que vai definir se voce vai 
+conseguir ter uma boa comunicacao com uma boa qualidade de imagem e audio
+
+
+para poder fazer a ligacao entre os sistemas finais (hospedeiros) e os enlaces temos:
+comutadores de pacotes -> usados para fazer o encaminhamento de pacote para o local certo
+os roteadores que vao checar os endereços dos pacotes e encaminhar para que eles cheguem ao 
+local correto pelo melhor caminho
+
+
+
+
+internet "rede de redes" -> muitas redes interconectadas
+no principio existiam os provedores de internet e voce so podia fazer conexao com as pessoas
+que estavam conectadas com o mesmo provedor, hoje nao
+
+para que a comunicacao possa acontecer:
+protocolos -> nao pode simplesmente mandar a mensagem de qualquer jeito e esperar que ela
+seja interpretada da maneira correta
+
+ex: TCP, IP, HTTP, Skype, IEEE 802.11
+
+se voce quer fazer um navegador web, vai ter que implementar a interface e é fundamental
+que seja implementado o protocolo HTTP porque ele que vai ser usado para comunicacao entre
+navegador e servidor web para buscar as paginas que estao lá
+
+protocolos definidos em padrões de internet -> alguns sao especificos de produtos, mas 
+outros sao abertos que qualquer pessoa pode implementar no seu software
+
+
+
+
+internet pode ser vista como infraestrutura que fornece servicos para aplicacoes:
+ela é o meio que voce usa para ter acesso a essas aplicacoes ou para fazer a comunicacao
+de uma comunicacao
+
+ex: Web, VoIP, email, jogos...
+
+o objetivo nao é usar a internet, mas usar a aplicacao, mas para isso usamos a internet
+
+a internet que fornce a interface de programacao para os aplicativos para que eles possam
+enviar ou receber dados
+
+analogo ao que acontece com o servico postal: coloca o envelope, o destino, o cep, o selo e
+escolhe a opcao, se é simples, expresso....
+na internet é a mesma coisa -> se voce quer enviar uma mensagem pela internet o seu programa
+faz uso de uma API de linguagem de programacao que constroi um pacote que vai ser enviada por
+essa API
+
+
+
+
+o que é um protocolo?
+humanos tem protocolos para uma serie de situacoes:
+
+- se voce ta andando na rua e quer saber a hora voce nao vai pegar uma pessoa pelo braço e
+olhar a hora no relogio dela: voce vai cumprimentar e pedir pra ela informar a hora
+existe um protocolo para perguntar a hora pra pessoa
+
+voce so vai ver a hora se o protocolo for seguido com sucesso, mas poderia acontecer da
+pessoa responder com "to ocupado!" ou com "eu nao falo a sua lingua!", assim, voce nao
+poderia receber a hora
+
+esses sao protolocos humanos: mensagens que voce envia e acoes que voce toma quando voce
+quer enviar uma mensagem e quer receber uma resposta, a resposta vai ser de acordo com a
+mensagem que voce envia
+
+protocolos de rede é a mesma coisa, so que com maquinas
+os protocolos vao definir o formato, a ordem da mensagem que sao enviadas e recebidas, as
+acoes que sao tomadas tambem no envio e na recepcao

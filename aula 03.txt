@@ -1,0 +1,198 @@
+padroes das arquiteturas de rede (organizao OSI e TCP/IP)
+
+as estruturas de redes de computadores sao muito complexas, seja devido aos muitos 
+componenetes de hardware ou software envolvidos
+dentre eles:
+- computadores -> podem estar executando aplicacoes clientes, servidoras ou ambos
+- equipamentos -> roteadores e switchies, tendo um nivel de complexidade elevada
+- enlaces de ligacao -> tendo suas varias categorias de cabos diferentes
+- protocolos e aplicacoes -> executando funcionalidades para permitir a comunicacao
+
+
+
+ha alguma forma de organizar o funcionamento de uma rede de computadores?
+quando temos alguma atividade complexa para realizar, costumamos dividir ela em passos:
+
+ex: organizacao de uma viagem
+
+chegar ao aeroporto (inicio) ->
+despachar a bagagem ->
+embarcar ->
+decolar ->
+fazer a navegacao aerea ->
+fazer o voo ate o ponto distante ->
+
+processo inverso
+
+navegacao aerea ->
+aterrisagem ->
+desembarque ->
+recebimento de bagagens ->
+saida do aeroporto (fim)
+
+alem de dividir nessas partes acima, tambem é possivel dividir por suas funcionalidades,
+isto é, por camadas:
+- facilita a definicao e relacionamento das partes de um sistema complexo
+- camadas sao implantadas em conjunto com suas funcionalidades
+
+ex: organizacao de uma viagem
+
+chegar ao aeroporto / sair do aeroporto
+despachar bagagem / receber bagagem
+embarcar / desembarcar
+decolar / aterrisar
+
+- dividindo assim é possivel alterar/modificar/readequar uma parte sem influenciar nas
+outras partes
+isto é: na hora do embarque pode separar pessoas com deficiencias das pessoas sem, pessoas
+idosas com mais de 60 anos das pessoas com menos de 60 anos, pessoas que estao nas janelas
+das pessoas no corredor -> facilita o processo de embarque sem mexer em outros processos
+como o da BAGAGEM
+
+
+
+todas as arquiteturas de redes de computadores desenvolvidas utilizam o conceito de dividir
+o conjunto de funcionalidades em camadas
+
+cada camada reune um conjunto de funcoes semelhates, que prove servicos da camadas
+imediatamente superior e recebe servicos de uma camada imediatamente inferior
+
+podendo definir PROTOCOLO como entidades de uma camada que permite a interacao entre
+instancias da mesma camada, porem em equipamentos/hosts distintos
+
+nesse sentido, os protocolos de uma camada prestam servicos aos protocolos de uma camada
+imediatamente superior, mas os protocolos se relacionam na mesma camada em equipamentos
+distintos
+
+
+
+RM-OSI - criado pela ISO - tinha como objetivo criar um "modelo de referencia" para
+todas as arquiteturas de rede
+
+moddelo conceitual que tinha como premissa servir a referencia para implementacoes reais
+
+o modelo se divide em 7 camadas: fisica, enlace, rede, transporte, sessao, apresentacao
+e aplicacao
+
+- fisica - estabelece os padroes de conectores, cabos, representacao de bits
+- enlace - define protocolos para controlar a troca de informacoes, bits ou sinais
+atraves do meio de transmissao (controle da informacao no meio fisico)
+- rede - promove a interconexao entre as varias redes
+- transporte - permite o transporte de informacao fim a fim (maquina origem a maquina 
+destino, sem se preocupar com o que veio anteriormente)
+- sessao - premissa principal controlar a transmissao (controlar um erro), nao perdendo
+todo o trabalho caso aconteca algum problema de conexao
+- apresentacao - cria um contexto comum entre maqunias que sejam distintas (seja em 
+hardware ou em software, compatilizando maquinas distintas)
+- aplicacao - fazem a interface dos servicos com os usuarios
+
+
+
+
+TCP/IP - criado pelo departamento de defesa americano - usado ate hoje na internet
+
+nao pode confundir TCP/IP com internet -> TCP/IP é a ARQUITETURA dos protocolos que 
+definem o funcionamento da internet
+
+define somente 5 camadas: fisica, enlace, rede, transporte e aplicacao
+
+a camada de sessao, apresentacao e aplicacao do modelo OSI existem sim aqui, mas estao 
+todas reunidas dentro da aplicacao, existindo sim a funcionalidade de definir um contexto
+comum entre maquinas distintas entre hardware e software
+
+
+
+- CAMADA FISICA - implementada em hardware
+
+especifica os sinais eletricos e eletronicos de cabos, fibras, pinos e outras coisas
+
+como os bits sao transmitidos nos meios fisicos? se sao modulados ou codificados etc
+
+
+- CAMADA DE ENLACE - interace de rede (mesma rede)
+
+funcao de controlar o acesso ao meio
+possui endereco fisico, o chamado endereco MAC (controle de acesso ao meio)
+prover a transferencia de dados entre dois equipamentos de uma mesma rede, detectando
+erros e corrigindo-os, controlando o fluxo de dados
+
+
+- CAMADA DE REDE (redes distintas)
+
+tranferir dados entre duas entidades/equipamentos localizados em redes distintas
+utiliza do enderecamento logico (endereco IP)
+acontece o roteamento entre redes - o pacote que que chega num roteador descobre o melhor
+caminho para ser seguido naquele momento
+
+
+- CAMADA DE TRANSPORTE 
+
+possibilita a comunicacao fim-a-fim (maquina origem com maquina destino), abstraindo
+o que aconteceu no meio, isto é, por onde os dados passaram -> nao consideram o que 
+acontece nos roteadores/switches/enlaces -> chegou la correto? sim? nao? pode corrigir
+
+possibilita o envio e recebimento de dados para varias aplicacoes de forma simultanea
+(posso fazer uma multiplexacao de uma aplicacao web atraves dos enderecos de aplicacao
+denominados PORTAS)
+
+pode controlar o fluxo, detectar erros e garantir a sequencia da informacao (opcionalmente)
+
+
+- CAMADA DE APLICACAO
+
+prestam servico diretamente ao usuario (parte visivel, ainda o usuario pode ver alguma
+coisa) -> clientes e servidoras
+ex: HTTP, FTP, SMTP e outros...
+
+
+
+exemplos de protocolos
+
+aplicacao - HTTP, SMTP, DNS -> prestam servico diretamente ao usuario, geralmente se
+utilizando de um dos protocolos da camada de transporte para se comunicar com a entidade
+destino na camada de transporte 
+
+transporte - TCP, UDP, RTP
+
+rede - IPv4, IPv6 -> tem como funcao encontrar o melhor caminho para o envio dos pacotes
+pela rede
+
+enlace - WIFI, Ethernet, BlueTooth -> protocolos de rede local, metropolitana
+
+fisica - 10BaseT, 100BaseT -> tecnologias de rede fisica transmitindo a curta ou longa 
+distancia, cabo de tv, de telefonia e outros
+
+
+
+visao mais espacial
+protocolos todos sao executados nas maquinas clientes, servidoras e ate nos roteadores
+
+no roteador sempre vai rodar os protocolos de rede fisica, de enlare e de rede, sendo os
+roteadores somente com a funcao de rotear, nao precisando de transporte e aplicacao, ja
+que so é necessario receber a informacao por uma porta e enviar por outra porta
+
+na maquina vai rodar tudo, ja que sai do usuario pela aplicacao, transporte e rede, saindo
+de uma maquina para outra atraves do enlace, chegando em outro canto, executando todas as 
+funcionalidades, mas nao todos os protocolos
+
+ex: camada de transporte
+recebe dados de uma aplicacao, acrescenta um cabecalho e parametros de verificacao de
+informacoes e entrega o protocolo a camada de rede (o ip por exemplo), sendo ele responsavel
+por levar ate a rede distante, identificando qual a maquina e identificando a aplicacao na
+maquina destino que deve entregar as informacoes para serem tratadas, reconhecendo e
+informando que recebeu corretamente caso TPC e nao informando caso UDP
+
+caminho por onde os dados passam:
+dados sao encapsulados da camada de aplicacao para a camada de transporte
+que sao encapsulados para a camada de rede
+que sao encapsulados para a camada de enlace
+rede fisica
+
+chegando no roteador pela fisica
+checa se chegou com algum erro na camada de enlace
+checando numa tabela de roteamento qual o melhor caminho a ser seguido naquele momento
+
+chegando na rede destino o roteador da rede destino verifica o endereco ip da maquina
+
+ao chegar na maquina é entregue ao protocolo de transporte
+o protocolo de transporte identifica atraves da porta qual a aplicaco destino
