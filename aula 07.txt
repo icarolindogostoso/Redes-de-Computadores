@@ -1,0 +1,238 @@
+Camada de Transporte
+
+camada fisica:
+- transmissao de bits seja pelo ar, sem fio, com fio
+
+camada de enlace:
+- delimitacao da informacao
+
+camada de rede:
+- enderecamento
+
+CAMADA DE TRANSPORTE:
+- multiplexacao dos fluxos de dados
+- confiabilidade
+- controle de erros e fluxos
+
+
+A camada de transporte da maquina de origem se comunica diretamente com a camada de transporte
+da maquina de destino, sem depender dos sistemas intermediarios que existem entre elas.
+
+isso significa que, quando uma maquina envia dados para outra, as camadas de transporte de
+ambas as maquinas trocam informacoes de forma direta e sem se preocupar com o que acontece
+nas camadas inferiores, como fisica, de enlace ou de rede
+
+-> exemplo:
+se voce está enviando uma mensagem de texto de um celular para outro a camada de transporte
+do seu celular vai se comunicar diretamente com a camada de transporte do celular destino,
+sem se importar com as redes, roteadores ou cabos que estao no caminho
+- agora, se estivermos falando das camadas fisica, de enlace ou de rede, ai sim a comunicacao
+depende dos sistemas intermediarios, como os fios ou sinais sem fio, porque esses niveis
+lidam com a transmissao dos dados de um ponto a outro de forma fisica
+
+
+- Modelo Interner TCP/IP
+patronizado dois protocolos de transporte:
+a) TCP (Transmission Control Protocol)
+b) UDP (User Datagram Protocol)
+
+
+- TCP X UDP
+
+diferenças:
+a) COMPLEXIDADE: O TCP é mais complexo por garantir que os dados cheguem corretamente ao
+destino, controlando possiveis erros, perdas e a origem de chegada. Já o UDP é mais simples,
+porque nao se preocupa com isso, apenas enviando os dados
+
+b) CONJUNTO DE FUNCIONALIDADES: O TCP oferece varias funcionalidades extras, como confirmacao
+de recebimento de dados e reorganizacao das mensagens na ordem certa. O UDP é mais direto,
+enviando os dados de forma rapida e sem garantias
+
+c) APLICACOES USUARIAS: O TCP é usado em aplicacoes onde é importante que os dados cheguem
+com precisao, como em navegadores de internet (HTTP), emails (SMTP), ou transferencia de
+aquvios (FTP). Já o UDP é usado em situacoes onde a velocidade é mais importante que a 
+precisao, como em jogos online, chamadas de video ou streaming de video, onde pode ser
+aceitavel perder alguns pacotes de dados, mas a comunicacao precisa ser rapida
+
+semelhancas:
+a) ambos tem o processo de MULTIPLEXACAO e DEMULTIPLEXACAO, o que significa que ambos podem
+lidar com multiplas conexoes de rede ao mesmo tempo. Elas usam PORTAS para identificar
+diferentes tipos de comunicacao, como um numero de um quarto de hotel
+
+exemplo: no TCP e no UDP, a porta 80 é geralmente usada para comunicacao de sites (HTTP),
+enquanto a porta 443 é usada para conexoes seguras (HTTPS)
+
+
+- Portas
+as portas podem ser entendidas como numeros de identificacao, como se cada aplicacao fosse
+um escritorio dentro de um predio. Mesmo que todas as aplicacoes estejam no mesmo computador
+(o predio), cada uma precisa de um numero especifico (a porta) para saber por onde receber
+e enviar dados, sem confundir com outras
+
+cada conexao feita entre duas maquinas é identificada por uma QUADRUPLA unica:
+- ip de origem -> o endereco do computador de onde os dados estao saindo
+- porta de origem -> o numero da porta do computador de origem, identificando a aplicacao
+que está enviando os dados
+- ip de destino -> o endereco do computador para onde os dados estao indo
+- porta de destino -> a porta da aplicacao no computador de destino, para onde os dados
+devem ser entregues
+
+ex: se o ip do seu computador for 192.168.1.10 e a porta 12345 e o ip do servidor for 
+203.0.113.20 com a porta 80 -> isso permite que seu computador saiba que está se conectando
+ao servidor de sites e qual aplicacao está fazendo conexao
+
+cada identificador de porta possui 16 bits de comprimento, podendo variar de 0 a 65535
+
+portas de origem e destino sao selecionadas aleatoriamente para uso pelo TCP e UDP, mas
+em servidores, portas utilizadas por aplicacoes "comuns" utilizam valores fixos. ex:
+22: SSH; 25: SMTP; 53: DNS; 80: HTTP; 443: HTTPS
+- essas portas tambem sao chamadas de portas baixas por estarem abaixo de 1024
+
+
+- UDP
+tipo de protocolo de comunicacao definido na RFC 768
+
+ele oferece um servico de MELHOR ESFORCO, o que significa que ele vai tentar enviar os dados
+da melhor forma possivel, mas nao garante que os dados vao chegar corretamente ou que 
+cheguem na ordem certa. Ou seja, ele faz o possivel, mas sem promessas.
+
+o UDP NAO É ORIENTADO A CONEXAO, o que significa que nao ha uma conversa continua entre as
+duas maquinas antes de comecar a trocar de dados. Ele simplesmente envia os dados e espera que
+o destinatario os receba (sem garantia)
+
+alem disso, CADA PACOTE UDP É TRATADO DE FORMA INDEPENDENTE, ou seja, ele nao se preocupa 
+com outros pacotes que possam estar sendo enviados. Cada pacote é enviado como uma mensagem
+isolada, sem depender dos anteriores ou dos seguintes
+
+ex: em um jogo online o UDP vai enviar dados como movimentos do personagem. O jogo nao 
+espera ou verifica se todos os pacotes chegaram corretamente, so se importando com a velocidade
+e se caso algum dado seja perdido, é ignorado
+
+formato do seguimento:
+
+porta origem / porta destino -> 32 bits
+tamanho / checksum - > 32 bits
+dados da aplicacao
+
+tamanho -> é o tamanho em bytes do segmento UDP, incluindo o cabeçalho
+checksum -> é usado para garantir que os dados nao foram corrompidos durante a transmissao,
+em caso de haver erro, o pacote com erro é descartado sem qualquer tentativa de correcao
+ou retransmissao
+
+se uma aplicacao usa UDP, partes do fluxo de dados entre origem e destino podem:
+- ser perdidos
+- chegarem fora de ordem
+- chegarem com erros
+
+se a aplicao precisar garantir que os dados cheguem corretamente, na ordem certa e sem erros,
+ela tem que implementar essas verificacoes e correcoes por conta propria. O UDP apenas envia
+os dados sem fazer nenhuma verificacao ou correcao
+
+utilizado por:
+- aplicacoes onde o volume de dados trocado é pequeno ex: DNS
+- aplicacoes que nao exigem alta confiabilidade: transmissao de video e audio
+
+
+- TCP
+implementa um servico:
+- orientado a conexao -> antes de comecar a enviar os dados, o TCP estabelece uma "conversa"
+entre o remetente e o destinatario para garantir que ambos estao prontos para a troca de 
+dados. So depoi que essa conexao é estabelecida é que os dados comecam a ser enviados
+
+- confiavel -> o TCP se preocupa em garantir que os dadso cheguem corretamente. Se algum
+dado se perder ou tiver erro no caminho, o TCP vai detectar e pedir para reenviar aquele
+dado ate que ele chegue de forma correta
+
+- controle de erros -> ha uma verificacao se os dados chegaram completos e sem alteracoes. Se
+algum erro for detectado, ele solicita que o pacote com o erro seja reenviado
+
+- controle de fluxo -> ha um controle da quantidade de dados que pode ser enviada de uma so
+vez, para evitar que o destinatario fique sobrecarregado com muitos dados de uma vez so.
+Isso é como se fosse um limite de velocidade para garantir que tudo chegue de forma ordenada
+e sem pressa
+
+formato do segmento
+
+porta origem / porta destino -> 32 bits
+numero de sequencia -> 32 bits
+numero de reconhecimento -> 32 bits
+tam cabec / nao usado / U / A / P / R / S / F / janela de recep -> 32 bits
+checksum / dados urgentes -> 32 bits
+opcoes -> tamanho variavel
+dados de aplicacao
+
+- numero de sequencia e numero de reconhecimento -> utilizados para sequenciamente e confiabilidade
+- A - ACK - confirmacoes
+- R, S, F - RST, SYN, FIN - aberta e encerramento de conexao
+- janela de recep - numero de bytes que o receptor esta pronto para aceitar
+
+processo:
+a) estabelecimento de conexao
+- antes que o cliente e o servidor possam comecara a trocar dados, eles precisam primeiro
+estabelecer uma conexao. Isto é como fazer um acordo ou um aperto de mao entre os dois para
+garantir que ambos estao prontos para a comunicacao
+
+- o cliente faz algumas preparacoes antes de comecara, como escolher uma porta de origem,
+que é como um numero de identificacao para a aplicacao que está fazendo a solicitacao
+
+- esse processo de abrir a conexao é chamado de TREE-WAY HANDSHAKE. funcionando assim:
+1. o cliente manda um pedido para o servidor dizendo que quer se conectar (bit SYN = 1)
+2. o servidor responde dizendo "ok, estou pronto para me conectar" (bit SYN e ACK = 1)
+3. o cliente confirma que recebeu a resposta e que está pronto para comecar a trocar dados (bit ACK = 1)
+
+b) encerramento de conexao
+- quando o cliente ou o servidor deseja encerrar a conexao, ele envia os bits FIN e ACK
+ativados ( = 1). Isso é como se fosse um aviso dizendo "estou pronto para terminar nossa
+conversa"
+
+- depois o outro lado precisa responder com um ACK que é um "ok, podemos encerrar"
+
+- esse processo garante que ambos os lados saibam que a conexao vai ser encerrada correamente
+sem deixar nada pendente
+
+c) transferencia de dados
+- cada pacote de dados enviado possui um NUMERO DE SEQUENCIA. Esse numero serve como uma
+identificacao unica para cada pedaco de dados que esta sendo transmitido
+
+- esses numeros de sequencia ajudam a REORGANIZAR os dados na ordem correta
+
+- mesmo o nome sendo "numero de sequencia", ele nao segue uma contagem simples e sequencial
+o numero nao é necessariamente o proximo numero em ordem crescente, mas sim uma forma de 
+identificar os dados corretamente
+
+- importante: o numero de sequencia é atribuido AOS DADOS e nao aos PACOTES. isso significa
+que mesmo que o TCP envie varios pacotes, o numero de sequencia se refere ao conteudo dos 
+dados e ajuda a juntar tudo de forma certa
+
+ex: suponha que um servidor irá enviar um arquivo de 4278 bytes para o cliente em pedacos
+de 800 bytes, neste caso os numeros de sequencia dos segmentos TCP serao -> 0, 800, 1600,
+2400, 3200 e 4000
+
+- ACK
+- quando o servidor ou cliente recebe um pedaco de informacao, ele envia de volta uma 
+confirmacao (ACK) dizendo "ok, recebi" que indica que o dado foi recebido corretamente
+
+- o numero de reconhemento que está no ack é o proximo dado que o servidor ou cliente espera
+receber. por exemplo, se o servidor recebeu ate o byte 100, ele enviaria um ACK com o numero
+101, sinalizando que esta esperando o proximo byte a partir desse numero
+
+- esse processo de confirmacao é chamado RECONHECIMENTO PASSIVO. ou seja, cada vez que um
+dado é recebido corretamente, uma resposta positiva é enviada. caso o servidor ou cliente nao
+receba o ACK dentro de um tempo determinado, ele entende que o dado nao chegou corretamente
+e tenta enviar novamente
+
+- controle de fluxo e congestionamento
+- para isso, é ajustado automaticamente a quantidade de dados enviados com base em alguns fatores
+importantes: 
+a) primeiro ele observa quanto tempo leva para receber as confirmacoes (ACKS). se os ACKS estao
+chegando rapidamente, o TCP pode aumentar o ritmo de envio. se demorar mais, ele pode reduzir
+a velocidade (TCP SlowStart)
+
+b) outro fator que o TCP leva em conta é a quantidade de vezes que ele precisa reenviar dados
+se ele esta tendo que retransmitir muitos pacotes porque eles nao foram recebidos corretamente,
+isso pode ser um sinal de congestionamento, e o TCP vai reduzir a velocidade para evitar 
+sobrecarregar a rede
+
+- o controle garante que tanto o computador que está enviando quanto o que esta recebendo
+funcionem de maneira equilibrada, se ficar nem parados esperando informacoes, nem
+sobrecarregados com dados demais
