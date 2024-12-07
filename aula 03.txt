@@ -196,3 +196,66 @@ chegando na rede destino o roteador da rede destino verifica o endereco ip da ma
 
 ao chegar na maquina é entregue ao protocolo de transporte
 o protocolo de transporte identifica atraves da porta qual a aplicaco destino
+
+
+
+RESUMO
+
+exploração das arquiteturas de rede e como elas são organizadas, abordando os modelos
+de referenica OSI e TCP/IP e suas respectivas camadas
+
+- Arquiteturas de Rede:
+* as redes de computadores envolvem componentes como COMPUTADORES, EQUIPAMENTOS DE REDE
+(roteradores, switches), ENLARES DE LIGACAO (cabos, fibras), e PROTOCOLOS E APLICACOES
+* para organizar o funcionamento de uma rede complexa, as funcionalidades são dividas
+em CAMADAS, facilitando a definicao, modificacao e manutencao de diferentes partes sem
+impactar outras
+
+- Modelo OSI:
+* define a comunicacao em 7 CAMADAS:
+a) fisica -> define os padores de conectores, cabos e transmissao de bits
+b) enlace -> controla o acesso ao meio de transmissao, detectando e corrigindo erros
+c) rede -> realiza a interconexao entre diferentes redes e roteamento de pacotes
+d) transporte -> permite comunicacao fim-a-fim, garantindo o fluxo e a sequencia dos dados
+e) sessao -> controla a transmissao e a recuperacao de erros durante a conexao
+f) apresentacao -> garante a compatibilidade entre diferentes sistemas de hardware e software
+g) aplicacao -> interage diretamente com o usuario, oferecendo servicos como HTTP, FTP, SMTP
+
+- Modelo TCP/IP:
+* define a comunicacao em 5 camadas:
+a) fisica -> como no OSI, define os meios de transmissao (cabos, fibras)
+b) enlace -> similar ao OSI, controla o acesso e a transferencia de dados dentro de uma
+rede local
+c) rede -> realiza o roteamento de pacotes e determina o melhor caminho entre redes distintas
+d) transporte -> garante a comunicação entre maquinas, controlando fluxo e erros 
+(ex: TCP, UDP)
+e) aplicacao -> engloba as funções de sessao, apresentação e aplicacao do modelo OSI, 
+proporcionando a interface com o usuario (ex: HTTP, SMTP)
+
+- Funcao das Camadas:
+* camada fisica -> cuida da transmissao dos bits, definindo como eles sao codificados 
+e transmitidos
+* camada de enlace -> gerencia a comunicacao entre dispositivos dentro da mesma rede, 
+garantindo a transferencia de dados sem erros
+* camada de rede -> lida com a comunicacao entre redes distintas, utilizando endereços IP e
+roteadores para encaminhar pacotes
+* camada de transporte -> permite a comunicação fim-a-fim, assegurando que os dados cheguem 
+corretamente ao destino e que multiplas aplicações possam se comunicar simultaneamente
+* camada de aplicação -> interage diretamente com o usuario, oferecendo serviços como 
+navegacao web (HTTP), e-mail (SMTP), e transferencia de arquivos (FTP)
+
+- Exemplos de Protocolos:
+* aplicacao -> HTTP, SMTP, DNS
+* transporte -> TCP, UDP, RTP
+* rede -> IPv4, IPv6
+* enlace -> Wi-Fi, Ethernet, Bluetooth
+* fisica -> 10BaseT, 100BaseT
+
+- Fluxo de Dados nas Redes:
+* os dados passam por varias camadas, sendo encapsulados de BAIXO PARA CIMA:
+a) da camada de APLICACAO para a TRANSPORTE (adicionando cabecalhos de controle)
+b) da TRANSPORTE para a REDE (com endereco IP)
+c) da REDE para a ENLACE (com controle de fluxos e erro)
+d) da ENLACE para a FISICA (transmissao via meio fisico)
+* nos ROTEADORES, os protocolos de FISICA, ENLACE E REDE, sao usados para encaminhar os 
+pacotes, enquanto TRANSPORTE E APLICACAO so sao processados pelos HOSTS finais
