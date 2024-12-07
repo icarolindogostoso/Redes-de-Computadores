@@ -110,3 +110,45 @@ ex: xDSL -> cabos metalicos de telefones, HFC -> cabos de fibra optica
 abrangencia de milhares de km
 usado em operadoras de telefone e grandes provedores de internet
 ex: MPLS, HDLC, frame relay
+
+
+RESUMO:
+
+conceitos essenciais sobre redes de computadores, sua definicao, protocolos de
+comunicacao e a estrutura da internet:
+
+- Definicoes de Redes de Computadores:
+* conjunto de processadores (computadores) interligados por um sistema de comunicacao
+para trocar informacoes e compartilhar recursos
+* a rede é formada por computadores que enviam e recebem dados por meio de um sistema
+de comunicacao, que organiza essa troca atraves de enlaces fisicos e protocolos
+
+- Protocolos:
+* regras para comunicacao entre entidades, como pessoas ou computadores
+* existem protocolos humanos (como perguntas e respostas) e protocolos de rede (que 
+governam as interacoes entre maquinas na internet, definindo o formato, ordem das
+mensagens e acoes durante a comunicacao)
+
+- A Internet:
+* a internet é uma rede de redes interconectadas por roteadores, formada por 
+dipositivos distribuidos (sem uma maquina central) que prestam servicos uns aos
+outros
+* a estrutura da internet é dividida em duas partes: BORDA DA REDE, onde estão os 
+clientes e servidores, e o NUCLEO DA REDE, onde os roteadores conectam diferentes redes,
+encaminhando pacotes de dados
+
+- Modelos de Comunicacao:
+* modelo cliente/servidor -> o cliente solicita servicos ao servidor, que os fornece 
+usando a infraestrutura da rede
+* modelo peer-to-peer (P2P) -> as maquinas atuam simultaneamente como clientes e servidores
+com uma comunicacao simetrica
+
+- Classificacao das Redes quanto a Abrangencia:
+* PANs (redes pessoais) -> alcance de ate 10 metros, geralmente sem fio e moveis, como o
+bluetooth
+* LANs (redes locais) -> com alcance de ate milhares de metros, usadas em empresas e
+predios, permitindo troca de grandes volumes de dados (ex: Ethernet, Wifi)
+* MANs (redes metrolopolitanas) -> com alcance de varios quilometros, conectando LANs de
+empresas ou funcionando como rede de acesso para residencias (ex: xDSL, HFC)
+* WANs (redes de longa distancia) -> com alcance de milhares de quilometros, contectando
+operadores de grandes provedores de internet (ex: MPLS, HDLC)
