@@ -145,11 +145,23 @@ A exploração das arquiteturas de rede e como elas são organizadas, abordando 
   - Redes de computadores envolvem **computadores**, **equipamentos de rede** (roteadores, switches), **enlaces de ligação** (cabos, fibras) e **protocolos e aplicações**.
   - Para organizar o funcionamento de uma rede complexa, as funcionalidades são divididas em **camadas**, facilitando a definição, modificação e manutenção de diferentes partes sem impactar outras.
 
-- **Modelo OSI**:
-  - Define a comunicação em **7 camadas**: Física, Enlace, Rede, Transporte, Sessão, Apresentação e Aplicação.
+- Modelo OSI:
+  * define a comunicação em 7 CAMADAS:
+    a) **física** -> estabelece os padrões de conectores, cabos e transmissão de bits  
+    b) **enlace** -> define protocolos para controlar a troca de informações, bits ou sinais através do meio de transmissão (controle da informação no meio físico)  
+    c) **rede** -> promove a interconexão entre as várias redes  
+    d) **transporte** -> permite o transporte de informação fim a fim (máquina origem a máquina destino, sem se preocupar com o que veio anteriormente)  
+    e) **sessão** -> premissa principal controlar a transmissão (controlar um erro), não perdendo todo o trabalho caso aconteça algum problema de conexão  
+    f) **apresentação** -> cria um contexto comum entre máquinas que sejam distintas (seja em hardware ou em software, compatibilizando máquinas distintas)  
+    g) **aplicação** -> fazem a interface dos serviços com os usuários  
 
-- **Modelo TCP/IP**:
-  - Define a comunicação em **5 camadas**: Física, Enlace, Rede, Transporte e Aplicação.
+- Modelo TCP/IP:
+  * define a comunicação em 5 camadas:
+    a) **física** -> como no OSI, define os meios de transmissão (cabos, fibras)  
+    b) **enlace** -> similar ao OSI, controla o acesso e a transferência de dados dentro de uma rede local  
+    c) **rede** -> realiza o roteamento de pacotes e determina o melhor caminho entre redes distintas  
+    d) **transporte** -> possibilita a comunicação entre máquinas, controlando fluxo e erros (ex: TCP, UDP)  
+    e) **aplicação** -> engloba as funções de sessão, apresentação e aplicação do modelo OSI, proporcionando a interface com o usuário (ex: HTTP, SMTP) 
 
 - **Função das Camadas**:
   - A camada **física** cuida da transmissão de bits.
