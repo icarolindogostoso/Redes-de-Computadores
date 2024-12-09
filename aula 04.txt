@@ -68,3 +68,32 @@ o curso e a redundancia
 topolia logica x topologia fisica 
 topologia logica - forma de se definir a rede a nivel de configuracao // COMO A REDE FUNCIONA
 topologia fisica - disposicao FISICA dos elementos, como os cabos estao organizados
+
+
+RESUMO
+
+as redes de comunicação posem usar MEIOS GUIADOS (como cabos metalicos ou fibras opticas) ou
+MEIOS NAO GUIADOS (como sistemas de radio, wifi e bluetooth)
+
+- os MODOS DE TRANSMISSAO definem como os dados são enviados entre dispostivos:
+* simplex - informacao viaja em um unico sentido, de um transmissor para um receptor, sem
+comunicacao bidirecional
+* half-duplex - a informacao percorre o meio em ambos os sentidos, mas alternadamente, ou seja,
+apenas um dispositivo transmite por vez
+* full-duplex - a transmissao e recepcao de dados ocorrem simultaneamente, proporcionando 
+maior velocidade de comunicacao
+
+- a TOPOLOGIA DE REDE refere-se a organizacao dos enlaces fisicos e ao caminho entre os 
+dispositivos conectados
+* ponto a ponto - dois dispositivos interconectados
+* multiponto - varios dispositivos interligados
+* topologia estrela - todos os dispositivos sao conectados a um ponto central (como um 
+switch ou hub), sendo comum em redes locais
+* topologia mista - combinacao de diferentes topologias, equilibrando custo e redundancia,
+comum em redes geograficamente distribuidas (WANs)
+
+alem disso, ha distincao entre TOPOLOGIA LOGICA (como a rede é configurada e funciona) e 
+TOPOLOGIA FISICA (disposicao real dos cabos e equipamentos)
+
+cada tipo de rede, seja logal ou geograficamente distuibuida, tem suas vantagens e desvantagens
+em temos de custo, confiabilidade e velocidade
