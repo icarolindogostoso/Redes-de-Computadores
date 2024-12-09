@@ -50,13 +50,17 @@ A **topologia de rede** refere-se à forma como os enlaces físicos estão organ
 As redes de comunicação podem usar **meios guiados** (como cabos metálicos ou fibras óticas) ou **meios não guiados** (como sistemas de rádio, Wi-Fi e Bluetooth).
 
 ### Modos de Transmissão
-- **Simplex**: A informação viaja em um único sentido, de um transmissor para um receptor, sem comunicação bidirecional.
-- **Half-Duplex**: A informação percorre o meio em ambos os sentidos, mas alternadamente, ou seja, apenas um dispositivo transmite por vez.
-- **Full-Duplex**: A transmissão e recepção de dados ocorrem simultaneamente, proporcionando maior velocidade de comunicação.
+Os **modos de transmissão** definem como os dados são enviados entre dispositivos:
+
+- **Modo Simplex**: A informação percorre o meio em um único sentido, ou seja, sai de um ponto e chega a outro ponto, **só em um sentido**. Um dispositivo será sempre o transmissor e o outro sempre será o receptor. Esse modo quase não é usado em redes de computadores, já que exige comunicação nos dois sentidos.
+- **Modo Half-Duplex**: A informação percorre o meio físico em ambos os sentidos, mas **alternadamente**, ou seja, apenas uma estação pode obter a posse do meio por vez. É o modo de transmissão das redes Ethernet.
+- **Modo Full-Duplex**: A informação é transmitida e recebida **simultaneamente**, ou seja, ao mesmo tempo, trazendo como benefício a melhor velocidade das interfaces. Esse tipo é mais comum nas redes que têm o switch.
 
 ### Topologia de Rede
-- **Ponto a ponto**: Dois dispositivos interconectados.
-- **Multiponto**: Vários dispositivos interligados.
+A **topologia de rede** refere-se à organização dos enlaces físicos e ao caminho entre os dispositivos conectados:
+
+- **Ponto a Ponto**: Só tem 2 nós (uma máquina e outra máquina) interligadas pelos elementos de comunicação, que podem ser cabo metálico, ótico ou de rádio.
+- **Multiponto**: Vários nós e equipamentos em cada enlace.
 - **Topologia Estrela**: Todos os dispositivos são conectados a um ponto central (como um switch ou hub), sendo comum em redes locais.
 - **Topologia Mista**: Combinação de diferentes topologias, equilibrando custo e redundância, comum em redes geograficamente distribuídas (WANs).
 
