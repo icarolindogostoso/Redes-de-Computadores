@@ -10,10 +10,10 @@
 ### a) Delimitação da Informação
 
 A camada física transmite uma sequência de bits sem qualquer semântica ou sintaxe associada:
-- 10100101011101010010101111 <- Isso pode significar qualquer coisa, dependendo do contexto.
+- `10100101011101010010101111` <- Isso pode significar qualquer coisa, dependendo do contexto.
 
 A camada de enlace estrutura a informação a ser transmitida em unidades lógicas chamadas **frames**, que possuem sintaxe e semântica predefinidas:
-- 1010010 1011101 010010 101111 <- Cada fragmento será traduzido conforme o protocolo, para que a mensagem seja entendida.
+- `1010010 1011101 010010 101111` <- Cada fragmento será traduzido conforme o protocolo, para que a mensagem seja entendida.
 
 O início e o fim de cada **frame** que passa pela rede podem ser determinados pelos equipamentos, permitindo que todos os dispositivos da rede que implementam a camada de enlace entendam as mensagens.
 
