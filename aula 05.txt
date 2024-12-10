@@ -95,3 +95,36 @@ switches Ethernet
 - dispositivo que opera na camada de enlace
 - monta uma tabela com os enderecos MAC dos equipamentos ligados a cada uma de suas
 portas
+
+
+RESUMO
+
+a camada de enlace de dados é responsavel por fornecer uma estrutura logica e funcional
+a transmissao de dados, diferenciando-se da camada fisica, que lida apenas com a transissao
+de bits
+
+- suas funcoes incluem:
+* delimitacao da informacao - na camada fisica, a transmissao de dados é feita como uma 
+sequencia de bits sem significado. A camada de enlace organiza esses bits em unidades logicas
+chamadas FRAMES, que possuiem sintaxe e semantica predefinidas, permitindo que todos os
+dispositivos da rede compreendam a mensagem
+
+* controle de acesso ao meio - define regras para o momento em que as estacoes podem transmitir
+dados, garantindo que nao haja colisoes no meio fisico (exemplo: em uma sala onde todos tentam
+falar ao mesmo tempo). Protocolos CSMA/CD (para redes cabeadas) e CSMA/CA (para redes sem fio)
+sao usadas para gerenciar esse controle:
+a) CSMA/CD - a estacao escuta o meio para verificar se está livre. se houver uma colisao (duas
+estacoes transmitindo ao mesmo tempo), a transmissao é abortada e reprogramada apos um
+intervalo aleatorio
+
+* enderecamento fisico (endereco MAC) - cada interface de rede tem seu endereco MAC unico, 
+um identificador de 48 bits usado para identificar dispositivos na rede. os primeiros 3 bytes
+identificam o fabricante e os 3 ultimos sao usados pelo fabricante para individualizar os 
+dispotivos
+
+* hubs ethernet - dispositivos que conectam multiplos dispositivos, repetindo o sinal recebido
+em uma porta para todas as outras, sem distinguir entre os dispositivos conectados
+
+* switches ethernet - funcionam na camada de enlace, criando uma tabela com os enderecos MAC
+dos dispositivos conectados a suas portas, o que permite uma comunicacao mais eficiente ao
+direcionar o trafego de dados diretamente entre estacoes de destino
