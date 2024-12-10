@@ -236,3 +236,56 @@ sobrecarregar a rede
 - o controle garante que tanto o computador que está enviando quanto o que esta recebendo
 funcionem de maneira equilibrada, se ficar nem parados esperando informacoes, nem
 sobrecarregados com dados demais
+
+
+RESUMO
+
+a camada de transporte do modelo OSI ou TCP/IP é responsavel pela comunicacao direta entre as 
+camadas de transporte das maquinas de origem e destino, sem depender das camadas inferiores
+(fisica, de enlace ou rede). Ela cuida da multiplexacao de dados, confiabilidade e controle de
+erros e fluxo
+
+- principais protocolos:
+* TCP
+a) orientado a contexao -> estabelece uma conecao entre o remetente e o destinatario antes de
+enviar os dados
+b) confiabilidade -> garante que os dados cheguem corretamente e na ordem certa, realizando
+controle de erros e retransmissoes se necessario
+c) controle de fluxpo -> gerencia a quantidade de dados enviados para evitar sobrecarregar o
+receptor
+d) exemplos de uso -> navegacao na web (HTTP), envio de emails (SMTP), FTP
+e) estabelecimento de conexao -> utiliza o processo three way handshake para garantir que ambos
+os lados estao prontos para a comunicacao
+f) encerramento da conexao -> finaliza a comunicacao de forma ordenada usando bits FIN e ACK
+
+* UDP
+a) sem conexap -> nao estabele uma conversa antes de enviar dados. Envia pacotes de dados de
+forma independente, sem garantir a entrega ou a ordem correta
+b) menos confiavel -> nao realiza verificacoes ou retransmissoes. Ideal para aplicacoes onde
+a velocidade é mais importante que a precisao
+c) exemplo de uso -> jogos online, streaming de video, chamadas de voz
+d) formato do pacote -> contem dados de aplicacao, portas de origem/destino e um checksum para
+verificar erros
+
+- portas:
+as portas identificam as diferentes aplicacoes em uma maquina, funcionando como numero de 
+identificacao para troca de dados. Cada conexao é identificada por uma QUADRUPLA unica:
+IP de origem, porta de origem, IP de destino e porta de destino
+
+- diferencas entre TCP e UDP:
+* TCP -> mais complexo, garante entrega correta, reodenacao de pacotes, controle de fluxo e
+erros. Usado em aplicacoes que requerem confiabilidade
+
+* UDP -> mais simples, sem garantias de entrega ou ordem dos pacotes. Usado quando a velocidade
+é mais importante, como em transmissao de video e jogos
+
+- controle de fluxo e congestionamento no TCP:
+o TCP ajusta automaticamente a quantidade de dados enviados com base na recepcao de confirmacoes
+(ACKs) e na quantidade de pacotes retransmitidos, ajudando a evitar contestionamento da rede
+
+- exemplos de portas fixas:
+* 22: SSH
+* 25: SMTP
+* 53: DNS
+* 80: HTTP
+* 443: HTTPS
