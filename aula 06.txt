@@ -95,3 +95,40 @@ foram corrompidos
 os pacotes de dados na velocidade em que estao sendo enviados
 
 obs: essas funcoes sao deixadas para serem implementadas na camada de transporte
+
+
+RESUMO
+
+a camada de rede é responsavel por:
+- enderecamento - atribuicao de enderecos logicos (enderecos IP) a cada estacao de rede
+- traducao de enderecos - mapeamento entre enderecos logicos (IP) e enderecos fisicos (MAC)
+- roteamento - encaminhamento dos dados para o destino atraves de roteadores
+
+modelo TCP/IP:
+- define coo os dispositivos se comunicam na internet, organizando a comunicacao em camadas
+- ele nao se preocupa com os detalhes fisicos da transmissao de dados (como fios ou wifi), 
+permitindo flexibilidade para usar diferentes tecnologias de rede)
+- foco na comunicacao entre dispositivos, facilitando a adaptacao a varias tecnologias e
+ajudando a internet a crescer rapidamente
+
+caracteristicas do TCP/IP:
+- simplicidade e flexibilidade - nao se preocupa com os detalhes fisicos da transmissao, o
+que facilita a adaptacao a diferentes redes
+- protocolos abertos e publicos - os protocolos usados sao abertos, permitindo que qualquer
+um os implemente sem custo
+
+funcoes da camada de rede:
+- enderecamento - atribui um endereco IP unico a cada dispositivo na rede
+- traducao de enderecos - converte enderecos IP (logicos) em enderecos MAC (fisicos) para a
+comunicacao na rede local
+- roteamento - envia os dados para o destino atraves de roteadores, determinando o melhor caminho,
+mesmo que o destino esteja em outra parte do mundo
+
+protocolo IP:
+- o protocolo ip é responsavel por enderecar e rotear dados, usando DATAGRAMAS (pacotes)
+- caracteristicas do IP:
+a) nao confiavel - nao garante que os pacotes cheguem ao destino nem na ordem correta
+b) nao orientado a conexao - cada pacote é independente, sem necessidade de uma conexao previa
+c) sem controle de erro - nao verifica se os pacotes chegam corretamente ou se forem corrompidos
+d) sem controle de fluxo - nao verifica se o destino pode receber os pacotes na velocidade de fluxo
+- essas funcoes (controle de erro e fluxo) sao tratadas na CAMADA DE TRANSPORTE
